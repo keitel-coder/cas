@@ -148,7 +148,7 @@ SHA512加密方法
 当需要对请求的资源进行鉴权时，进入该过滤器方法，在方法中判断用户是否已登录。以下为请求http://site1.yitu.com/my.html为例。
 
 * 用户已登录，返回请求的资源
-* 用户未登录，将用户重定向至CAS登录页。例如（参数部分已UrlEncode）：https://cas.szhome.com/login?callback=http%3a%2f%2fsite1.yitu.com%2flogin%3fcallback%3dhttp%253a%252f%252fsite1.yitu.com%252fmy.html
+* 用户未登录，将用户重定向至CAS登录页。例如（参数部分已UrlEncode）：https://cas.yitu.com/login?callback=http%3a%2f%2fsite1.yitu.com%2flogin%3fcallback%3dhttp%253a%252f%252fsite1.yitu.com%252fmy.html
 
 #### login 登录方法
 >请求参数：serviceTicket(st)
