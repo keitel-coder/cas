@@ -157,7 +157,7 @@ SHA512加密方法
 2. 服务端通过接收到的Service Ticket向CAS校验（https://cas.yitu.com/serviceValidate?st=接收的st参数）。
 3. CAS服务如返回失败则告知用户登录失败或提示用户未登录。
 4. CAS服务如返回成功，则表示用户登录成功，执行保存用户登录凭证工作后返回callback参数地址（上述callback参数中的callback参数）。
->登录成功写登录凭证的几部：
+>登录成功写登录凭证的几步：
 >1、随机生成SessionId，保证SessionId的唯一性，SessionId将作为缓存的key。
 >2、将SessionId和CAS返回的用户信息（如用户id、用户名、代理授权凭证（Proxy-Granting ticket）、登录时间、过期时间）保存至缓存。示例：key:MDVCRURGNUMtNUU2MS00MTE2LTk4OUMtQ0QxODFBOTc0MjVE，Value:`{userId:1,userName:"admin",pgt:"W0d1aWQoIkYxMTE5NDQxLTlDOEItNDFFQS1BOTA2LUJDQzlBNkQ3QTdDMiIpXVtHdWlkKCJENzNFOENGMy0zMDVCLTQ1QkItOUY3Qy04MzI3MUM5M0Q5OUMiKV0=",createTime:"2019-08-18 11:00:00",expireTime:"2019-08-18 15:00:00"}`
 >3、将sessionId、用户Id、登录时间、失效时间、内容签名 经过AES加密后的Base64字符串保存至用户浏览器Cookie。
